@@ -1,0 +1,34 @@
+# openapi2-functions.yaml
+
+swagger: "2.0"
+info: 
+  title: my-api
+  description: API to prevent unauthed access to a cloud function
+  version: 1.0.0
+schemes: 
+  - https
+produces: 
+  - application/json
+paths:
+  /generateImage:
+    post:
+      summary: Process request
+      operationId: generateImage
+      x-google-backend:
+        address: https://us-central1-elemented-images.cloudfunctions.net/generateImage
+      x-google-endpoints:
+      - name: https://us-central1-elemented-images.cloudfunctions.net/generateImage
+        allowCors: True
+        --cors_preset: basic
+      security:
+      - api-key: []
+      responses:
+        '200':
+          description: Response succeeded.
+          schema: 
+            type: array
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"

@@ -1,0 +1,114 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* Body declaration with light colors */
+body {
+    --background-color: white;
+    --border-color: #e1e4e8;
+    --link-color: #7f8690;
+    --paragraph-color: #abb1bb;
+    --header-color: black;
+    --interaction-color: #f3f4f6;
+    --interaction-text-color: #111827;
+    --active-color: #3490ea;
+    --blue-div-background: #eff6ff;
+    --blue-div-border: #bfdbfe;
+
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+/* Body declaration with dark colors */
+body.dark {
+    --background-color: #0d1117;
+    --border-color: #30363d;
+    --link-color: #c9d1d9;
+    --paragraph-color: #c9d1d9;
+    --header-color: white;
+    --interaction-color: #21262d;
+    --interaction-text-color: #c9d1d9;
+    --blue-div-background: #3490ea;
+    --blue-div-border: #3490ea;
+}
+
+/* Input declaration */
+input {
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 6px 15px 6px 15px;
+    background-color: var(--interaction-color);
+    border: 1px solid transparent;
+    font-size: 16px;
+    color: var(--interaction-text-color);
+    font-family: 'system-ui'
+}
+
+input:focus {
+    outline: 0;
+    border: 1px solid var(--active-color)
+}
+
+/* Button declaration */
+button {
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 6px 15px 6px 15px;
+    background-color: var(--interaction-color);
+    border: 1px solid transparent;
+    font-size: 16px;
+    color: var(--interaction-text-color);
+    font-family: 'system-ui'
+}
+
+button:hover {
+    border: 1px solid var(--active-color)
+}
+
+button:focus {
+    outline: 0;
+    border: 1px solid var(--active-color)
+}
+
+/* Removing margin from text */
+h1, h2, h3, h4, p, a {
+    margin: 0;
+}
+
+/* Adding font weight to headers and coloring them custom */
+h1, h2, h3, h4 {
+    font-weight: 800;
+    color: var(--header-color)
+}
+
+/* Link declaration */
+a {
+    color: var(--link-color);
+    padding: 5px 10px 5px 10px;
+}
+
+/* Paragraph declaration */
+p {
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--paragraph-color)
+}
+
+/* Div declaration */
+.creator-container {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Div blue style */
+.blue-container {
+    background-color: var(--blue-div-background);
+    border: 1px solid var(--blue-div-border)
+}
+
+/* Any path icons adhere to header color rules */
+path {
+    fill: var(--header-color)
+}
+

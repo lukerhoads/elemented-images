@@ -1,0 +1,34 @@
+.header-container {
+    padding: 20px;
+    margin-top: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stretch {
+    width: 100%;
+    height: 100%;
+}
+
+.minimal {
+    width: 40px;
+}
+
+.header-container div {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container div:hover {
+    box-shadow: none;
+}
+
+.toggle-button, .minimal a {
+    padding: 7px 10px 7px 10px;
+    display: flex;
+    align-items: center;
+}
