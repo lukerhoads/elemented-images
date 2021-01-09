@@ -24,14 +24,13 @@ const Creator = () => {
             myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
             var urlencoded = new URLSearchParams();
-            urlencoded.append("key", process.env.REACT_APP_GOOGLE_API_KEY);
-            urlencoded.append("width", widthRef);
-            urlencoded.append("height", heightRef);
-            urlencoded.append("text", textRef);
-            if (colorRef === '') {
-                urlencoded.append("color", 'default');
+            urlencoded.append("width", widthRef.current.value);
+            urlencoded.append("height", heightRef.current.value);
+            urlencoded.append("text", textRef.current.value);
+            if (colorRef.current.value === '') {
+                urlencoded.append("color", "default");
             } else {
-                urlencoded.append("color", colorRef);
+                urlencoded.append("color", colorRef.current.value);
             }
 
             var requestOptions = {
@@ -42,6 +41,7 @@ const Creator = () => {
             };
 
             fetch(process.env.REACT_APP_GATEWAY_URL, requestOptions)
+                .then(response => response.json())
                 .then(response => {
                     setIsLoading(false)
                     setImageLink(response.link)
@@ -52,6 +52,31 @@ const Creator = () => {
                     setError('Error fetching image properties.')
                 });
         }
+    }
+
+    const onDownload = () => {
+        fetch(imageLink, {
+            method: 'GET',
+            responseType: 'blob',
+            headers: {
+                'Content-Type': 'application/pdf'
+            },
+        })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(
+                    new Blob([blob])
+                )
+                const link = document.createElement('a')
+                link.href = url;
+                link.setAttribute(
+                    'download',
+                    'Elemented.png'
+                );
+                document.body.appendChild(link)
+                link.click()
+                link.parentNode.removeChild(link)
+            })
     }
 
     const validateResults = () => {
@@ -114,7 +139,7 @@ const Creator = () => {
                         <img alt="result" src={imageLink} id="result-image" />
                         <div className="image-actions-container">
                             <div className="input-positioner">
-                                <a id="download-button">Download</a>
+                                <a id="download-button" onClick={onDownload}>Download</a>
                                 <a href={shareLink}>Share</a>
                             </div>
                         </div>

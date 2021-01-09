@@ -30,6 +30,11 @@
 .result-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+#download-button:hover {
+    cursor: pointer;
 }
 
 .result-container img {
