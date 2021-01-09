@@ -1,6 +1,6 @@
 # Elemented Images
 
-<img src="https://ibb.co/5rsFF7J" />
+<img src="https://res.cloudinary.com/dxfzgyqor/image/upload/co_rgb:ffffff,l_text:SFProBold.ttf_192:Elemented%20Images/c_crop,h_1080,w_1920/v1/backgrounds/default.png" />
 
 Hey! This is a project I started to give everyone the ability to generate clean cover images. Sometimes, it just sucks to open illustrator and make these tedious things. 
 
