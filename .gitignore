@@ -30,3 +30,4 @@ firebase.json
 /.firebase
 
 /functions/admin-config.json
+/functions/.runtimeconfig.json
